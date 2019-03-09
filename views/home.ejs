@@ -1,0 +1,130 @@
+
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="assets/css/navbar.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/home.css" rel="stylesheet" type="text/css">
+    
+
+</head>
+<body>
+  <!--navigation bar-->
+  <% include partials/navbar.ejs %>
+
+  <!--category bar
+  <div class="row card bg-light text-dark" style="margin:10vh 10vw;padding:2vh 2vw;text-align: center;">
+    <h3>Explore Categories </h3>
+    <div class="card-deck">
+     <div class="card">
+       <img class="card-img-top" src="assets/images/electronic.jpg" alt="Card image"></a>
+       <div class="card-body">
+        <h4 class="card-title">Electronics</h4>
+       </div>
+     </div>
+     <div class="card">
+       <img class="card-img-top" src="assets/images/toy.jpg" alt="Card image"></a>
+       <div class="card-body">
+        <h4 class="card-title">Toys</h4>
+       </div>
+     </div>
+     <div class="card">
+      <img class="card-img-top" src="assets/images/toy.jpg" alt="Card image"></a>
+      <div class="card-body">
+       <h4 class="card-title">Toys</h4>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="assets/images/toy.jpg" alt="Card image"></a>
+      <div class="card-body">
+       <h4 class="card-title">Toys</h4>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="assets/images/toy.jpg" alt="Card image"></a>
+      <div class="card-body">
+       <h4 class="card-title">Toys</h4>
+      </div>
+    </div>
+   </div>
+       -->
+<div id="banner1" class="container-fluid" style="margin-top:0vh;padding:2vw;">
+  <div class="row"  style="Margin-left:10vw;margin-top:5vh;">
+  <div class="col-md-5">
+   <div id="demo" class="carousel slide row"  data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+       <% for(var j=0;j< categories.length;j++){ %>
+        <%if(j==0) {%>
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <% }else{ %>
+        <li data-target="#demo" data-slide-to="<%j%>"></li>
+        <% } %>
+        <% } %>
+      </ul>
+    
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+      <% for(var k=0; k< categories.length;k++) { %>
+       <%if(k==0) {%>
+        <div class="carousel-item active">
+       <% }else{ %>
+        <div class="carousel-item">
+        <% } %>
+          <img style="height:40vh;" class="card-img-top"  src="<%=categories[k].link %>" alt="<%=categories[k].alt %>">
+          <div  class="carousel-caption">
+              <h3><%=categories[k].name%></h3>
+              
+            </div>
+        </div>
+      <% } %>
+      </div>
+    
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+  </div>
+  </div>
+</div>
+</div>
+  <!-- search box-->
+  <div class="row" style="margin-left:0;margin-top:1vh;background-color:lavender;padding-left:10vw;padding-top:1vh;">
+  <form class="form-inline">
+    <div class="input-group search-box">
+      <input type="text" class="form-control" id='key' placeholder="What are you looking for?" aria-label="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" id='srch' type="button"><i class="fas fa-search"></i></button>
+      </span>
+    </div>
+  </form>
+</div>
+
+<!--categories-->
+<div class="row card bg-light text-dark" style="margin:10vh 10vw;padding:2vh 2vw;text-align: center;">
+  <h4>Explore Categories</h4>
+ <div class="card-deck" >
+  <% for(var i=0;i< categories.length;i++ ) { %>
+   <div class=" card" style="float:left;padding-left:2vw;">
+    <h5><%=categories[i].name %></h5>
+    <% for(var j=0; j < categories[i].subcat.length; j++ ){  %>
+       <div class="row">
+        <a style="color:dimgray;" href="<%=categories[i].subcat[j].link %>"+ "/" + " <%=categories[i].subcat[j].categoryId %>"><%=categories[i].subcat[j].name %></a>
+       </div>
+    <% } %>
+   </div>
+  <% } %>
+ </div> 
+</div>
+
+<script>
+   $('#srch').on('click',function(event){
+     window.location = '/product-search/'+$('#key').val();
+   })
+</script>

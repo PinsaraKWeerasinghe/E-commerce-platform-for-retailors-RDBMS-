@@ -1,0 +1,165 @@
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Pike Admin - Free Bootstrap 4 Admin Template</title>
+		<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
+		<meta name="author" content="Pike Web Development - https://www.pikephp.com">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../control/assets/images/favicon.ico">
+
+		<!-- Switchery css -->
+		<link href="../control/assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+		
+		<!-- Bootstrap CSS -->
+		<link href="../control/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		
+		<!-- Font Awesome CSS -->
+		<link href="../control/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		
+		<!-- Custom CSS -->
+		<link href="../control/assets/css/style.css" rel="stylesheet" type="text/css" />
+
+		<!-- BEGIN CSS for this page -->
+		<style>
+		.table > tbody > tr > .no-line {
+			border-top: none;
+		}
+		.table > thead > tr > .no-line {
+			border-bottom: none;
+		}
+		.table > tbody > tr > .thick-line {
+			border-top: 2px solid;
+		}
+		</style>
+		<!-- END CSS for this page -->
+				
+</head>
+
+<div class="row">
+						
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">						
+            
+            <div class="card mb-3">
+                        <div class="card-header">
+                            <h3><i class="fa fa-table"></i> Order Summary</h3>
+                        </div>
+                            
+                        <div class="card-body">
+                            
+                            <div class="container">
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="invoice-title text-center mb-3">
+                                            <h2>Order ID #<%= result[0].orderId %></h2>
+                                            <strong>Date:</strong> <%= result[0].orderedDate %>												
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-6">																
+                                                <h5>Billed To:</h5>
+                                                <address>
+                                                    <%=result[0].aptName %><br>
+                                                    <%= result[0].streetNumber %><br>
+                                                    <%= result[0].streetName %><br>
+                                                    <%= result[0].city %><br>
+                                                    <%= result[0].state %> , <%= result[0].zip %><br>
+                                                </address>
+                                            </div>
+                                            <div class="col-md-6 float-right text-right">																
+                                                <h5>Shipped To:</h5><br>
+                                                <address>
+                                                    <%= result[0].ShippingAddress %>
+                                                </address>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5>Payment Method:</h5>
+                                                <address>
+                                                    Visa ending **** 4242<br>
+                                                    
+                                                </address>
+                                            </div>
+                                            <div class="col-md-6 float-right text-right">
+                                                <h5>Deliver Date:</h5>
+                                                <address>
+                                                    <%= result[0].deliveredDate %><br><br>
+                                                </address>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title"><strong>Order summary</strong></h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-condensed">
+                                                        <thead>
+                                                            <tr>
+                                                                <td><strong>Item</strong></td>
+                                                                <td class="text-center"><strong>Price</strong></td>
+                                                                <td class="text-center"><strong>Quantity</strong></td>
+                                                                <td class="text-right"><strong>Totals</strong></td>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                                            <% for(var i=0 ; i<orderItems.length; i++) { %>
+                                                            <tr>
+                                                                <td><%=orderItems[i].productId %></td>
+                                                                <td class="text-center"><%=orderItems[i].unitPrice %></td>
+                                                                <td class="text-center"><%=orderItems[i].quantity %></td>
+                                                                <td class="text-right"><%=orderItems[i].price %></td>
+                                                            </tr>
+                                                            
+                                                            
+                                                            <% } %>
+                                                            <tr>
+                                                                <td class="no-line"></td>
+                                                                <td class="no-line"></td>
+                                                                <td class="no-line text-center" ><strong>Total</strong></td>
+                                                                <td class="text-right">
+                                                                    <b><%=result[0].totalPrice %></b></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                  
+                            
+                        </div><!-- end card body -->															
+                        
+                    </div><!-- end card-->					
+                    
+                </div><!-- end col-->			
+
+    </div><!-- end row-->
+
+    <script src="../control/assets/js/modernizr.min.js"></script>
+<script src="../control/assets/js/jquery.min.js"></script>
+<script src="../control/assets/js/moment.min.js"></script>
+
+<script src="../control/assets/js/popper.min.js"></script>
+<script src="../control/assets/js/bootstrap.min.js"></script>
+
+<script src="../control/assets/js/detect.js"></script>
+<script src="../control/assets/js/fastclick.js"></script>
+<script src="../control/assets/js/jquery.blockUI.js"></script>
+<script src="../control/assets/js/jquery.nicescroll.js"></script>
+<script src="../control/assets/js/jquery.scrollTo.min.js"></script>
+<script src="../control/assets/plugins/switchery/switchery.min.js"></script>
+
+<!-- App js -->
+<script src="../control/assets/js/pikeadmin.js"></script>

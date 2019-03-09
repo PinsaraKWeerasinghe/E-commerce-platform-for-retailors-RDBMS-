@@ -1,0 +1,69 @@
+</head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+ <link href="assets/css/log-in.css" rel="stylesheet" type="text/css">
+ <script src="assets/js/sign-in.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+                <div class="col-lg-12 login-key">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-12 login-title">
+                   Log-in
+                </div>
+
+                <div class="col-lg-12 login-form" >
+                    <div class="col-lg-12 login-form">
+                        <form  id="flog" >
+                            <div class="form-group">
+                                <label class="form-control-label">USERNAME</label>
+                                <input id="username" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">PASSWORD</label>
+                                <input  id="password" type="password" class="form-control"  required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sel1">Log-in as</label>
+                                <select class="form-control" id="sel1">
+                                  <option value="1">customer</option>
+                                  <option value="2">admin</option>
+                                  <option value="2">courier</option>
+                                </select>
+                              </div>
+                            </div>
+                            
+                            
+                            <label class="form-control-label">Don't have an account yet</label>
+                            <div class="loginbttm">
+                                
+                                <div class=" login-btm login-button">
+                                    <a href="/register" class="btn btn-outline-primary">SIGN-UP</a>
+                                </div>
+                            </div>
+                            <div class="loginbttm" style="margin-left:70%;">
+                                <div class="login-btm login-text">
+                                    <!-- Error Message -->
+                                </div>
+                                <div class=" login-btm login-button" style="margin-left:5vw;">
+                                    <button id="subbut" class="btn btn-outline-primary">LOGIN</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
+    </body>
+
+
+
+

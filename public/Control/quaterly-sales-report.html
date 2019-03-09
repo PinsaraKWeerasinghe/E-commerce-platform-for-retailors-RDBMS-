@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Quaterly Sales Report</title>
+		<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
+		<meta name="author" content="Pike Web Development - https://www.pikephp.com">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+		<!-- Switchery css -->
+		<link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+		
+		<!-- Bootstrap CSS -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		
+		<!-- Font Awesome CSS -->
+		<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		
+		<!-- Custom CSS -->
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />	
+		
+		<!-- BEGIN CSS for this page -->
+
+		<!-- END CSS for this page -->
+				
+</head>
+
+<body class="adminbody">
+
+<div id="main">
+
+	<!-- top bar navigation -->
+	<div class="headerbar">
+
+		<!-- LOGO -->
+        <div class="headerbar-left">
+			<a href="index.html" class="logo"><img alt="logo" src="assets/images/logo.png" /> <span>Admin</span></a>
+        </div>
+
+        <nav class="navbar-custom">
+
+                    <ul class="list-inline float-right mb-0">
+
+						<li class="list-inline-item dropdown notif">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <i class="fa fa-fw fa-question-circle"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5><small>Help and Support</small></h5>
+                                </div>
+
+                                <!-- item-->
+                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">                                    
+                                    <p class="notify-details ml-0">
+                                        <b>Do you want custom development to integrate this theme?</b>
+                                        <span>Contact Us</span>
+                                    </p>
+                                </a>
+
+                                <!-- item-->
+                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">                                    
+                                    <p class="notify-details ml-0">
+                                        <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
+                                        <span>Try Pike Admin PRO</span>
+                                    </p>
+                                </a>                               
+
+                                <!-- All-->
+                                <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
+                                    <i class="fa fa-link"></i> Visit Pike Admin Website
+                                </a>
+
+                            </div>
+                        </li>
+						
+                        
+                        <li class="list-inline-item dropdown notif">
+                            <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="text-overflow"><small>Hello, admin</small> </h5>
+                                </div>
+
+                                
+
+                                <!-- item-->
+                                <a href="#"  onclick='logout()' class="dropdown-item notify-item">
+                                    <i class="fa fa-power-off"></i> <span>Logout</span>
+                                </a>
+
+								
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left">
+								<i class="fa fa-fw fa-bars"></i>
+                            </button>
+                        </li>                        
+                    </ul>
+
+        </nav>
+
+	</div>
+	<!-- End Navigation -->
+	
+ 
+	<!-- Left Sidebar -->
+	<div class="left main-sidebar">
+    
+        <div class="sidebar-inner leftscroll">
+
+            <div id="sidebar-menu">
+        
+            <ul>
+
+                    <li class="submenu">
+                        <a class="active" href="index.html"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+                    </li>
+
+                    
+                    
+                    <li class="submenu">
+                        <a href="#"><i class="fa fa-fw fa-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="customer-table-1.html">Customers</a></li>
+                                <li><a href="product-table.html">Products</a></li>
+                                <li><a href="category-table-1.html">Product Categoriess</a></li>
+                                <li><a href="order-table-1.html">Order </a></li>
+                                <li><a href="courier-table-1.html">Couriers</a></li>
+                                <li><a href="wearhouse-table-1.html">WearHose </a></li>
+                            </ul>
+                    </li>
+                                        
+                    <li class="submenu">
+                        <a href="#"><i class="fa fa-fw fa-tv"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="customer-order-report.html">Customer Order Report</a></li>
+                                <li><a href="most-sold-product.html">Most Sold Products</a></li>
+                                <li><a href="most-sold-category.html">Most Sold Category</a></li>
+                                <li><a href="ui-carousel.html">Most Interested Product</a></li>
+                                <li><a href="quaterly-sales-report.html">Sales Report</a></li>
+                                
+                            </ul>
+                    </li>
+
+                    <li class="submenu">
+                        <a href="#"><i class="fa fa-fw fa-file-text-o"></i> <span> Add Data </span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="forms-general.html">Add Product</a></li>
+                            </ul>
+                    </li>
+                    
+                    
+            <div class="clearfix"></div>
+
+            </div>
+        
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+	<!-- End Sidebar -->
+
+
+    <div class="content-page">
+	
+		<!-- Start content -->
+        <div class="content">
+            
+			<div class="container-fluid">
+
+					
+							<div class="row">
+									<div class="col-xl-12">
+											<div class="breadcrumb-holder">
+													<h1 class="main-title float-left">Quaterly Sales Report</h1>
+													<ol class="breadcrumb float-right">
+														<li class="breadcrumb-item">Home</li>
+													</ol>
+													<div class="clearfix"></div>
+											</div>
+									</div>
+							</div>
+							<!-- end row -->
+
+							
+							<div class="row">
+									<div class="col-xl-12">	
+                                        <div class="col-xl-12"> 
+                                        <div class="card mb-3"> 
+                                            <div class="card-body">								
+									           <input type='text' name='year' class="" id="showyear"  placeholder="Enter Year" required>
+
+                                               <a role="button" id='showReport' class="btn btn-primary" href="#">Show Report</a>
+                                                <br><br>
+                                                <div id='first_q'>
+                                                    <h5 class=" float-left">First Quater</h5>
+                                                       <table id="first_q-example1" class="table table-bordered table-hover display">
+                                                            <thead>
+                                                                <tr >
+                                                                    <th >Product ID</th>
+                                                                    <th >Title</th>
+                                                                    <th >Quantity</th>
+                                                                    <th >Net </th>
+                                                                </tr>
+                                                    
+
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>     
+                                                </div>
+
+                                                <div id='second_q'>
+                                                    <h5 class=" float-left">Second Quater</h5>
+                                                       <table id="second_q-example1" class="table table-bordered table-hover display">
+                                                            <thead>
+                                                                <tr >
+                                                                    <th >Product ID</th>
+                                                                    <th >Title</th>
+                                                                    <th >Quantity</th>
+                                                                    <th >Net </th>
+                                                                </tr>
+                                                    
+
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>     
+                                                </div>
+
+                                                <div id='third_q'>
+                                                    <h5 class=" float-left">Third Quater</h5>
+                                                       <table id="third_q-example1" class="table table-bordered table-hover display">
+                                                            <thead>
+                                                                <tr >
+                                                                    <th >Product ID</th>
+                                                                    <th >Title</th>
+                                                                    <th >Quantity</th>
+                                                                    <th >Net </th>
+                                                                </tr>
+                                                    
+
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>     
+                                                </div>
+
+                                                <div id='forth_q'>
+                                                    <h5 class=" float-left">Forth Quater</h5>
+                                                       <table id="forth_q-example1" class="table table-bordered table-hover display">
+                                                            <thead>
+                                                                <tr >
+                                                                    <th >Product ID</th>
+                                                                    <th >Title</th>
+                                                                    <th >Quantity</th>
+                                                                    <th >Net </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody></tbody>
+                                                        </table>  
+
+                                                </div>
+
+                                                <div >
+                                                    <table id='totalSales' class='table'>
+                                                        
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+									</div>
+							</div>
+
+
+
+            </div>
+			<!-- END container-fluid -->
+
+		</div>
+		<!-- END content -->
+
+    </div>
+	<!-- END content-page -->
+    
+	<footer class="footer">
+		<span class="text-right">
+		Copyright <a target="_blank" href="#">Cvender</a>
+		</span>
+		<span class="float-right">
+		<a target="_blank" href="https://www.pikeadmin.com"><b>Cvender Admin</b></a>
+		</span>
+	</footer>
+
+</div>
+<!-- END main -->
+
+<script src="assets/js/modernizr.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/moment.min.js"></script>
+
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/detect.js"></script>
+<script src="assets/js/fastclick.js"></script>
+<script src="assets/js/jquery.blockUI.js"></script>
+<script src="assets/js/jquery.nicescroll.js"></script>
+<script src="assets/js/jquery.scrollTo.min.js"></script>
+<script src="assets/plugins/switchery/switchery.min.js"></script>
+
+<!-- App js -->
+<script src="assets/js/pikeadmin.js"></script>
+
+<!-- BEGIN Java Script for this page -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script>
+    $('#showReport').on('click',function(event){
+        year = $('#showyear').val();
+        getReport(year);
+    });
+
+    function getReport(year){
+        $.get("../admin/report/quaterly_report_product/"+year, function(bigData, status){
+            tables=['#first_q-example1','#second_q-example1','#third_q-example1','#forth_q-example1']
+            
+            cols = ['productID','title','quantity','total']
+            grand = 0;
+            qty = 0;
+            for(k=0;k<4;k++){
+                data = bigData[k];
+                table = $(tables[k]).find('tbody');table.empty();
+                totalPrice = 0;totalQunatity= 0;
+                for(i=0;i<data.length;i++){
+                    var tr = document.createElement("tr");
+                    for(j=0;j<4;j++){
+                        var td = document.createElement("td");
+                        if(j==4){
+                            td.innerHTML = "$ " + data[i][cols[j]]
+                        }else{
+                            td.innerHTML = data[i][cols[j]]
+                        }
+                        td.innerHTML = data[i][cols[j]]
+                        tr.append(td);
+                        if(j==3){
+                            totalPrice+= parseInt(data[i][cols[j]]);
+                        }
+                        if(j==2){
+                            totalQunatity+= parseInt(data[i][cols[j]]);
+                        }
+                    }
+                    table.append(tr);
+                }
+
+                grand += totalPrice;
+                qty+= totalQunatity;
+                if(data !=[]){
+                    var tot = document.createElement('tr');
+                    var td1 = document.createElement('td');
+                    td1.setAttribute('colspan','2');
+                    tot.append(td1);td1.innerHTML = "Total";
+                    var td2 = document.createElement('td');
+                    td2.innerHTML=totalQunatity;
+                    var td3 = document.createElement('td');
+                    td3.innerHTML=totalPrice;
+                    tot.append(td2);tot.append(td3);
+                    //alert(totalPrice);
+                    table.append(tot);
+                }
+            }
+            $('#totalSales').empty()
+            eltr = document.createElement('tr');
+            el1 = document.createElement('td');
+            el1.innerHTML = '<h3><b>Total sales of Year  ' + year+"</h3></b>";
+            //el1.setAttribute('style','border-top-style:solid');
+            el1.setAttribute('colspan',3);
+            el2 = document.createElement('td');
+            el2.innerHTML = "<b><h2>"+qty+"</h2></b> units";
+            el3 = document.createElement('td');
+            el3.innerHTML = "<b><h2> $"+grand+"</h2></b>";
+
+            eltr.append(el1);eltr.append(el2);eltr.append(el3);
+            $('#totalSales').append(eltr);
+
+        }).done(function(){
+            $.get("../admin/report/quaterly_report_category", function(result, status){
+            dataset = {labels:[],
+                datasets:[{
+                    label: "Sales of Categories",
+                    data:[],
+                    backgroundColor:['rgba(255, 99, 132, 0.2)'],
+                    borderColor: [
+                        'rgba(255,99,132,1)'],
+                    borderWidth: 1
+                }]
+            };
+            for(i=0;i<result.length;i++){
+                dataset.datasets[0]['data'].push(result[i]["quantity"]);
+                dataset["labels"].push(result[i]['name']);
+            }
+        // barChart
+        var ctx1 = document.getElementById("barChart").getContext('2d');
+        var barChart = new Chart(ctx1, {
+            type: 'bar',
+            data: dataset,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+            });
+        });
+
+    }
+    function logout(){
+            $.get("../logout", function(data, status){
+                window.location="../home";
+            });
+        }
+</script>
+<!-- END Java Script for this page -->
+
+</body>
+</html>

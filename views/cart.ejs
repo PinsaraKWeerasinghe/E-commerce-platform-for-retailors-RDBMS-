@@ -1,0 +1,107 @@
+<head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+          <link href="assets/css/navbar.css" rel="stylesheet" type="text/css">
+          <link href="assets/css/cart.css" rel="stylesheet" type="text/css">
+          <script src="../assets/js/cart.js"></script> 
+ </head>
+<body>
+  <% include partials/navbar.ejs %>
+  <div class="container">
+        <h2>Shopping Cart</h2>           
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Unit Price</th>
+              <th>Quantity</th>
+             
+              
+            </tr>
+          </thead>
+          <tbody>
+           <% for(var i=0 ; i<items.cartitems.length; i++) { %>
+           <tr>
+            <td>
+              <div class="row"> 
+               <div class="col-md-3" >
+                <img style="width:100%;" class="responsive-img" src="<%= items.cartitems[i].link %>" alt="<%= items.cartitems[i].title %>">
+               </div>
+               <div class="col-md-5">
+                   <h5><%=items.cartitems[i].title %></h5>
+                  <!-- <p style="color:green;font-size: 80%;"><%=items.cartitems[i].itemavailability %></p>-->
+                   <button id="<%= i %>" class="btn btn-danger delete" style="font-size: 80%;">remove</button>
+               </div>
+
+              </div> 
+            </td>
+            
+            <td>$ <%=items.cartitems[i].price %></td>
+            <td>
+              <select id="<%=i%>"  class="adds" name="quantity" >
+                <option value="<%=items.cartitems[i].quantity %>"><%=items.cartitems[i].quantity %></option>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+            </select> </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <div class="row" style="padding-left:75%;"  >
+        <div class="col col-sm-4" style="float:right;color:rgb(79, 81, 83);font-size: 150%;">Total:</div>
+        <div class="col col-sm-4" style="float:right;color:green;font-size:150%;">$<% if(items.cartitems.length!=0){%><%=items.totalPrice[0].totalPrice %><% }else{ %>0<%} %></div>
+      </div>
+      </div>
+      <div class="row" style="padding-left:30%;padding-top:5vh;" >
+         <div class="col-md-3"></div>
+          <button id="checkout" type="button" class="btn btn-primary">Checkout <i class="fas fa-shopping-cart"></i></button>
+          </div>
+      </div>
+      <span id='variableJSON' hidden>
+          <%= JSON.stringify(items.cartitems); %>
+      </span>
+      <!-- The Modal -->
+<div class="modal fade" id="addcart">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header" style="padding-left:8vw;">
+          <p class="modal-title" style="color:crimson;font-size:120%;">Payment</p>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+           
+           <!-- Modal body -->
+          <div class="modal-body">
+              <div class="container" style="padding:2vw;">
+                  <div class="form-group">
+                      <label for="sel1">Payment Method:</label>
+                      <select class="form-control" id="method" name="sellist1">
+                          <option vlue='null'>Choose payment method</option>
+                          <option value='1'>Credit Card <i class="fas fa-credit-card"></i></option>
+                          <option value='2'>On dilivery <i class="fas fa-truck"></i></option>
+                        </select>
+                    </div>
+                  <div class="form-group">
+                      <label for="shipadd">Shipping Address</label>
+                      <textarea class="form-control" rows="5" name="shipadd" id="shipadd"></textarea>
+                     </div>
+                  </div>
+                </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button id="proceed" type="button" class="btn btn-primary" >Proceed</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <button type="button" style="display:none;" id="addbut" class="btn btn-info btn-lg " data-toggle="modal" data-target="#addcart">Open Modal</button>
+</body>

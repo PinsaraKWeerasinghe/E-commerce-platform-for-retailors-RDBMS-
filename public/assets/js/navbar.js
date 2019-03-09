@@ -1,0 +1,19 @@
+$(document).ready(function(){
+    $('#logout').on('click',function(event){
+        event.preventDefault();
+        alert('yes');
+        $.ajax({
+            type:'get',
+            url:'/logout',
+            data:data,
+            success:function(data){
+              if(data){
+                window.location.replace('/home');
+              }
+              else{
+                 window.location.replace('/home');
+              }
+            }
+        });
+    });
+});
